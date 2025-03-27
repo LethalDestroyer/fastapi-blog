@@ -1,0 +1,30 @@
+fastapi-blog/
+├── app/
+│   ├── api/
+│   │   ├── v1/
+│   │   │   ├── routes/
+│   │   │   │   ├── auth.py
+│   │   │   │   ├── blog.py
+│   │   │   │   └── comment.py
+│   │   │   └── __init__.py
+│   │   └── __init__.py
+│   ├── core/
+│   │   ├── config.py
+│   │   ├── security.py
+│   │   └── __init__.py
+│   ├── db/
+│   │   ├── base.py
+│   │   ├── models/
+│   │   │   ├── user.py
+│   │   │   ├── blog.py
+│   │   │   └── comment.py
+│   │   ├── schemas/
+│   │   │   ├── user.py
+│   │   │   ├── blog.py
+│   │   │   └── comment.py
+│   │   └── session.py
+│   ├── main.py
+│   └── __init__.py
+├── requirements.txt
+├── README.md
+└── .env

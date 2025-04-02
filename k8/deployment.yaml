@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-blog
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: fastapi-blog
+  template:
+    metadata:
+      labels:
+        app: fastapi-blog
+    spec:
+      containers:
+      - name: fastapi-blog
+        image: devopsdestroyer/fastapi-blog:latest
+        ports:
+        - containerPort: 80

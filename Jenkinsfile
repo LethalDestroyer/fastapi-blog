@@ -7,7 +7,7 @@ pipeline {
     }
 
     stages {
-
+        # Clone the repository
         stage('📥 Clone Repo') {
             steps {
                 git branch: 'master', url: 'https://github.com/LethalDestroyer/fastapi-blog.git'

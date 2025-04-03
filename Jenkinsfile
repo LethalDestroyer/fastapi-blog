@@ -1,46 +1,10 @@
 pipeline {
     agent any
-
-    environment {
-        IMAGE = "devopsdestroyer/fastapi-blog"
-        TAG = "latest"
-    }
-
     stages {
-
-        stage('🐳 Build Docker Image') {
+        stage('Test') {
             steps {
-                sh 'docker build -t $IMAGE:$TAG .'
+                echo '🔥 Clean Jenkins works perfectly!'
             }
-        }
-
-        stage('📤 Push to DockerHub') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
-                    sh '''
-                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
-                        docker push $IMAGE:$TAG
-                    '''
-                }
-            }
-        }
-
-        stage('🚀 Deploy to Kubernetes') {
-            steps {
-                sh '''
-                    kubectl apply -f k8s/deployment.yaml
-                    kubectl apply -f k8s/service.yaml
-                '''
-            }
-        }
-    }
-
-    post {
-        success {
-            echo '✅ Deployment successful!'
-        }
-        failure {
-            echo '❌ Pipeline failed!'
         }
     }
 }

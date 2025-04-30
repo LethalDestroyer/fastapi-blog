@@ -7,7 +7,7 @@ from app.api.v1.routes import auth, blog, comment
 
 app = FastAPI(title="Blog API", version="1.0.0")
 
-# Create DB tables on startup
+# Create DB tables 
 base.Base.metadata.create_all(bind=engine)
 
 app.include_router(auth.router)

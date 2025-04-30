@@ -1,7 +1,4 @@
-git
-pipeline
-docker-workflow
-credentials
-blueocean
-kubernetes-cli
+kubernetes
 workflow-aggregator
+git
+configuration-as-code

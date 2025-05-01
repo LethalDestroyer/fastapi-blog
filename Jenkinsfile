@@ -10,10 +10,10 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo 'Cloning repository...'
-                git url: 'https://github.com/LethalDestroyer/fastapi-blog.git', branch: 'main'
+                git url: 'https://github.com/LethalDestroyer/fastapi-blog.git', branch: 'master'
             }
         }
-        
+
         stage('Build Docker Image') {
             steps {
                 sh """
